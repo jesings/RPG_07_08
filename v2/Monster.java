@@ -6,5 +6,8 @@ public class Monster extends Character{
      defense=(int)Math.random()*20+5;
      attack=Math.random()*2.5;
     }
+    public String toString(){
+	return "This is a monster."+System.lineSeparator()+ "HP: "+HP+System.lineSeparator()+ strength+" attack "+System.lineSeparator()+" attack "+" attack.";
+    }
  }
  
