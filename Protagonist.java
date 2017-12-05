@@ -7,6 +7,7 @@ public class Protagonist extends Character{
      strength = 100;
      defense = 40;
      attack = 0.4;
+     magicDef = 40;
     }
     public String getName(){
         return name;

@@ -2,6 +2,7 @@ public class Character{
     protected int HP;
     protected int strength;
     protected int defense;
+    protected int magicDef;
     protected double attack;
     public boolean isAlive(){
         return HP > 0;
