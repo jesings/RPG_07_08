@@ -1,9 +1,10 @@
 public class Skeleton extends Monster{
     public Skeleton(){
+	super();
 	monsterType="Skeleton";
-	HP=(int)Math.random()*100+50;
-	strength=(int)Math.random()*25;
-	defense=(int)Math.random()*20+5;
-	magicDef=(int)Math.random()*10+10;
+	HP -= 25;
+	strength += (int)Math.random()*5;
+	defense += 20;
+	magicDef += 5;
     }
 }

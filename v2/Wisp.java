@@ -1,12 +1,13 @@
 public class Wisp extends Monster{
     protected int magic;
     public Wisp(){
+	super();
 	monsterType="Wisp";
-	HP=(int)Math.random()*50+50;
+	HP -= 50;
 	strength=(int)Math.random()*5;
-	defense=(int)Math.random()*20+5;
+	defense -= 10;
 	magic =(int)Math.random()*10+5;
-	magicDef=(int)Math.random()*20+10;
+	magicDef += 10;
     }
         public String toString(){
 	    return super.toString()+
