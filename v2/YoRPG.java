@@ -113,10 +113,10 @@ public class YoRPG
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-	    if(MErate==1){
+	    if(MErate==0){
 		smaug = new Skeleton();
 	    }
-	    if(MErate==2){
+	    if(MErate==1){
 		smaug = new Wisp();
 	    }
 	    else{
@@ -187,7 +187,7 @@ public class YoRPG
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
 
-        System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+        System.out.println( "\n" + "Ye Olde "+ smaug.monsterType +" smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
 	    }//end while
 
@@ -201,7 +201,7 @@ public class YoRPG
 	    }
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
-        System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+        System.out.println( "HuzzaaH! Ye olde "+smaug.monsterType+" hath been slain!" );
         return true;
 	    }
 	    //option 3: the beast slays you
