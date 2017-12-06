@@ -108,7 +108,7 @@ public class YoRPG
     int i = 1;
     int d1, d2;
 
-    if ( Math.random() >= ( difficulty / 3.0 ) )
+    if ( Math.random() >= ( difficulty / 3.0 +0.2) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
