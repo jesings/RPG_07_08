@@ -107,13 +107,20 @@ public class YoRPG
   {
     int i = 1;
     int d1, d2;
-
+    int MErate=(int)(Math.random()*3);
     if ( Math.random() >= ( difficulty / 3.0 +0.2) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-
-	    smaug = new Monster();
+	    if(MErate==1){
+		smaug = new Skeleton();
+	    }
+	    if(MErate==2){
+		smaug = new Wisp();
+	    }
+	    else{
+		smaug = new Wraith();
+	    }
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
 

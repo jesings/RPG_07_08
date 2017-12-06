@@ -4,9 +4,9 @@ public class Wraith extends Monster{
 	super();
 	monsterType="Wraith";
 	HP += 10; 
-	strength -= (int)Math.random()*15;
+	strength -= (int)(Math.random()*15);
 	defense -= 10;
-	magic =(int)Math.random()*20+15;
+	magic =(int)(Math.random()*20+15);
 	magicDef += 25;
     }
     public String toString(){

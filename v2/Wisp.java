@@ -4,9 +4,9 @@ public class Wisp extends Monster{
 	super();
 	monsterType="Wisp";
 	HP -= 50;
-	strength=(int)Math.random()*5;
+	strength=(int)(Math.random()*5);
 	defense -= 10;
-	magic =(int)Math.random()*10+5;
+	magic =(int)(Math.random()*10+5);
 	magicDef += 10;
     }
         public String toString(){

@@ -3,7 +3,7 @@ public class Skeleton extends Monster{
 	super();
 	monsterType="Skeleton";
 	HP -= 25;
-	strength += (int)Math.random()*5;
+	strength += (int)(Math.random()*5);
 	defense += 20;
 	magicDef += 5;
     }
