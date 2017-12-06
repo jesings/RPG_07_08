@@ -1,11 +1,21 @@
 public class Mage extends Protagonist{
-    protected int MP;
-    protected int Magic;
-    public Mage(){
-	super();
-	MP = 100;
-	magic = 75;
-	defense -= 10;
-	magicDef += 10;
-    }
+    private int MP;
+	private int magic;
+	protected String[] spellBook = new String[3];
+    public Mage(String name){
+		super(name);
+		MP = 100;
+		magic = 75;
+		defense -= 10;
+		magicDef += 10;
+	}
+	public int getMagic(){
+		return magic;
+	}
+	public void useMP(int amt){
+		MP -= amt;
+	}
+	public int getMP(){
+		return MP;
+	}
 }

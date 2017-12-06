@@ -16,10 +16,10 @@ public class Character{
         HP -= damage;
     }
     public String[] getEffects(){
-	return effects;
+        return effectsList;
     }
-    public String[] getDurations(){
-	return durations;
+    public int[] getDurations(){
+        return durations;
     }
     public void iterateDurations(){
 	for(int p = 0;p < durations.length;p++){
