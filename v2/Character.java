@@ -4,8 +4,8 @@ public class Character{
     protected int defense;
     protected int magicDef;
     protected double attack;
-    protected String[] effectsList;
-    protected int[] durations;
+    protected String effect;
+    protected int duration;
     public boolean isAlive(){
         return HP > 0;
     }
@@ -15,16 +15,20 @@ public class Character{
     public void lowerHP(int damage){
         HP -= damage;
     }
-    public String[] getEffects(){
-        return effectsList;
+    public String getEffect(){
+        return effect;
     }
-    public int[] getDurations(){
-        return durations;
+    public void setEffect(String e){
+        effect = e;
     }
-    public void iterateDurations(){
-	for(int p = 0;p < durations.length;p++){
-	    durations[p]--;
-	}	
+    public int getDuration(){
+        return duration;
+    }
+    public void iterateDuration(){
+        duration--;
+    }
+    public double getAttack(){
+        return attack;
     }
     public int attack(Character victim){
         int damageDealing = (int) (strength * attack - victim.getDefense());

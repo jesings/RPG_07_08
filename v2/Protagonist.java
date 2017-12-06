@@ -11,6 +11,10 @@ public class Protagonist extends Character{
     public String getName(){
         return name;
     }
+    public void buff(){
+        attack += .2;
+        defense += 6;
+    }
     public void specialize(){
             defense = 5;
             attack = .6;

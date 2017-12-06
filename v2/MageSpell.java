@@ -4,28 +4,38 @@ public class MageSpell{
 	private String effect;
     public MageSpell(Mage caster,String spellType){
 		if(spellType == "Healing"){
-			damage = (int) (-.3 * magic);
-			caster.changeMP(25);
+			damage = (int) (-.3 * caster.getMagic());
+			caster.useMP(25);
 		}
 		else if (spellType == "Magic Missile"){
-			damage = (int) (magic * .6 * attack);
-			caster.changeMP(15);
+			damage = (int) (caster.getMagic() * .6 * caster.getAttack());
+			caster.useMP(15);
 		}
 		else if (spellType == "Poison"){
-			damage = (int) (.1 * magic * attack);
-			duration = (int) (.08 * magic);
+			damage = (int) (.1 * caster.getMagic() * caster.getAttack());
+			duration = (int) (.08 * caster.getMagic());
 			effect = "Poisoned";
-			caster.changeMP(20);
+			caster.useMP(20);
 		}
 		else if (spellType == "Stun"){
-			damage = (int) (.2 * magic * attack);
+			damage = (int) (.2 * caster.getMagic() * caster.getAttack());
 			effect = "Stunned";
 			duration = 2;
-			caster.changeMP(20);
+			caster.useMP(20);
 		}
 		else if (spellType == "Buff"){
-			duration = (int) (.08 * magic);
-			caster.changeMP(10);
+			effect = "Buffed";
+			duration = (int) (.08 * caster.getMagic());
+			caster.useMP(10);
 		}
-    }
+	}
+	public int getDamage(){
+		return damage;
+	}
+	public int getDuration(){
+		return duration;
+	}
+	public String getEffect(){
+		return effect;
+	}
 }

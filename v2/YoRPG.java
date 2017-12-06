@@ -87,7 +87,7 @@ public class YoRPG
     if (mageType==1){
 	pat=new DarkMage(name);
     }
-    if(mageType==2){
+    else if(mageType==2){
 	pat=new GreyMage(name);
     }
     else{
@@ -108,6 +108,7 @@ public class YoRPG
     int i = 1;
     int d1, d2;
     int MErate=(int)(Math.random()*3);
+    String spellNow = null;
     if ( Math.random() >= ( difficulty / 3.0 +0.2) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
@@ -128,19 +129,60 @@ public class YoRPG
         // If you land a hit, you incur greater damage,
         // ...but if you get hit, you take more damage.
         try {
-          System.out.println( "\nDo you feel lucky?" );
-          System.out.println( "\t1: Nay.\n\t2: Aye!" );
+          System.out.println( "\nDo you feel special?" );
+          System.out.println( "\t1: Nay.\n\t2: Aye!\n\t3: Positively Magical!" );
           i = Integer.parseInt( in.readLine() );
         }
         catch ( IOException e ) { }
 
         if ( i == 2 )
           pat.specialize();
-        else
+        else{
           pat.normalize();
+          if(i==3){
+            try{
+              if (pat.getMP() < 0)
+                Integer.parseInt("43564fds");
+              System.out.println("Cast thine spell!");
+              for(int j = 0;j<3;j++)
+                System.out.println(j + ": " + pat.spellBook[j]);
+              spellNow = pat.spellBook[Integer.parseInt(in.readLine())];
+            } catch(IOException e){} catch(Exception e){System.out.println("Invalid to cast a spell here");}
 
-        d1 = pat.attack( smaug );
-        d2 = smaug.attack( pat );
+          }
+        }
+        if(i != 3)
+          d1 = pat.attack( smaug );
+        else if (!spellNow.equals("Healing") && !spellNow.equals("Buff")){
+          d1 = pat.magicAttack(smaug,spellNow);
+        }
+        else{
+          d1 = 0;
+          pat.magicSelf(spellNow);
+        }
+
+        if (smaug.getEffect() != null){
+          smaug.iterateDuration();
+        if (smaug.getDuration() == 0){
+          smaug.setEffect(null);
+        }
+        if (smaug.getEffect().equals("Poisoned"))
+          smaug.lowerHP(8);
+        if (smaug.getEffect().equals("Stunned"))
+          d2 = 0;
+        else
+          d2 = smaug.attack( pat );
+        }
+        else d2 = smaug.attack( pat );
+        if (pat.getEffect() != null){
+          pat.iterateDuration();
+          if (pat.getDuration() == 0){
+            pat.normalize();
+            pat.setEffect(null);
+          }
+          else
+            pat.buff();
+        }
 
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");

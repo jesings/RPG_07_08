@@ -2,6 +2,24 @@ public class Mage extends Protagonist{
     private int MP;
 	private int magic;
 	protected String[] spellBook = new String[3];
+	public int magicAttack(Monster victim,String spell){
+		MageSpell myMagic = new MageSpell(this,spell);
+		victim.lowerHP(myMagic.getDamage());
+		if (myMagic.getEffect() != null){
+			victim.effect = myMagic.getEffect();
+			victim.duration = myMagic.getDuration();
+		}
+		return myMagic.getDamage();
+	}
+	public void magicSelf(String spell){
+		MageSpell myMagic = new MageSpell(this,spell);
+		if (spell.equals("Buff")){
+			effect = myMagic.getEffect();
+			duration = myMagic.getDuration();
+		} else {
+			lowerHP(myMagic.getDamage());
+		}
+	}
     public Mage(String name){
 		super(name);
 		MP = 100;
