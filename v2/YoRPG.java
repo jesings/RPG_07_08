@@ -16,12 +16,13 @@ public class YoRPG
   public final static int MAX_ENCOUNTERS = 5;
 
   //each round, a Protagonist and a Monster will be instantiated...
-  private Protagonist pat;   //Is it man or woman?
+  private Mage pat;   //Is it man or woman?
   private Monster smaug; //Friendly generic monster name?
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int class;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -65,6 +66,16 @@ public class YoRPG
 	    difficulty = Integer.parseInt( in.readLine() );
     } catch ( IOException e ) { }
 
+    s += "\nChoose your class: \n";
+    s += "\t1: DarkMage\n";
+    s += "\t2: GreyMage\n";
+    s += "\t3: LightMage\n";
+    s += "Selection: ";
+    System.out.print( s );
+    try {
+	    class = Integer.parseInt( in.readLine() );
+    } catch ( IOException e ) { }
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -73,7 +84,18 @@ public class YoRPG
     } catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    pat = new Mage( name );
+    if (class==1){
+	DarkMage magician=new DarkMage();
+	Mage pat=magic;
+    }
+    else if(class==2){
+	GreyMage magician=new GreyMage();
+    }
+    else{
+	LightMage magician=new LightMage();
+    }
+    Mage pat=magician;
 
   }//end newGame()
 
