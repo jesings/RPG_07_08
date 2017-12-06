@@ -22,7 +22,7 @@ public class YoRPG
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
-  private int class;
+  private int mageType;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -66,14 +66,14 @@ public class YoRPG
 	    difficulty = Integer.parseInt( in.readLine() );
     } catch ( IOException e ) { }
 
-    s += "\nChoose your class: \n";
+    s = "\nChoose your mage: \n";
     s += "\t1: DarkMage\n";
     s += "\t2: GreyMage\n";
     s += "\t3: LightMage\n";
     s += "Selection: ";
     System.out.print( s );
     try {
-	    class = Integer.parseInt( in.readLine() );
+	    mageType = Integer.parseInt( in.readLine() );
     } catch ( IOException e ) { }
 
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
@@ -84,19 +84,16 @@ public class YoRPG
     } catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Mage( name );
-    if (class==1){
-	DarkMage magician=new DarkMage();
-	Mage pat=magic;
+    if (mageType==1){
+	pat=new DarkMage(name);
     }
-    else if(class==2){
-	GreyMage magician=new GreyMage();
+    if(mageType==2){
+	pat=new GreyMage(name);
     }
     else{
-	LightMage magician=new LightMage();
+	pat=new LightMage(name);
     }
-    Mage pat=magician;
-
+  
   }//end newGame()
 
 
