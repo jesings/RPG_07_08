@@ -5,4 +5,7 @@ public class DarkMage extends Mage{
         spellBook[1] = "Stun";
         spellBook[2] = "Magic Missile";
     }
+    public String toString(){
+        return super.toString() + " that specializes in Dark Magic";
+    }
 }

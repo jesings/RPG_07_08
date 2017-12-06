@@ -5,4 +5,7 @@ public class GreyMage extends Mage{
         spellBook[1] = "Poison";
         spellBook[2] = "Magic Missile";
     }
+    public String toString(){
+        return super.toString() + " that does not specialize in either kind of Magic";
+    }
 }

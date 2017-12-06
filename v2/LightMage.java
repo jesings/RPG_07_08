@@ -5,4 +5,7 @@ public class LightMage extends Mage{
         spellBook[1] = "Buff";
         spellBook[2] = "Magic Missile";
     }
+    public String toString(){
+        return super.toString() + " that specializes in Light Magic";
+    }
 }

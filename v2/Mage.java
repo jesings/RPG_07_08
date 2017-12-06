@@ -18,4 +18,7 @@ public class Mage extends Protagonist{
 	public int getMP(){
 		return MP;
 	}
+	public String toString(){
+		return super.toString() + ", the Mage";
+	}
 }

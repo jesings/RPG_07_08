@@ -19,5 +19,8 @@ public class Protagonist extends Character{
             defense = 10;
             attack = .4;
     }
+    public String toString(){
+            return name + ", " + HP + " H.P.";
+    }
  }
  
