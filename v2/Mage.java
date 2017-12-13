@@ -11,7 +11,7 @@ public class Mage extends Protagonist{
 		}
 		return myMagic.getDamage();
 	}
-	public void magicSelf(String spell){
+	public int magicSelf(String spell){
 		MageSpell myMagic = new MageSpell(this,spell);
 		if (spell.equals("Buff")){
 			effect = myMagic.getEffect();
@@ -19,6 +19,7 @@ public class Mage extends Protagonist{
 		} else {
 			lowerHP(myMagic.getDamage());
 		}
+		return Math.abs(myMagic.getDamage());
 	}
     public Mage(String name){
 		super(name);

@@ -30,6 +30,10 @@ public class Character{
     public double getAttack(){
         return attack;
     }
+    public int getHP(){
+        return HP;
+    }
+
     public int attack(Character victim){
         int damageDealing = (int) (strength * attack - victim.getDefense());
         if(damageDealing >0){

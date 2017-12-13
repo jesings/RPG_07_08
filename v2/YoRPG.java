@@ -158,18 +158,23 @@ public class YoRPG
         }
         else{
           d1 = 0;
-          pat.magicSelf(spellNow);
+          System.out.println(pat.getName() + " has heal'd theirself for " + pat.magicSelf(spellNow) + " hit pointes.");
         }
 
         if (smaug.getEffect() != null){
           smaug.iterateDuration();
         if (smaug.getDuration() == 0){
+          System.out.println("Ye olde monster is no longer " + smaug.getEffect());
           smaug.setEffect(null);
         }
-        if (smaug.getEffect().equals("Poisoned"))
+        if (smaug.getEffect().equals("Poisoned")){
           smaug.lowerHP(8);
-        if (smaug.getEffect().equals("Stunned"))
+          System.out.println("Ye olde monster is poison'd and has lost 8 of its hit pointes. It is left with " + smaug.getHP() + "hit pointes.");
+        }
+        if (smaug.getEffect().equals("Stunned")){
           d2 = 0;
+          System.out.println("Ye olde monster was stunn'd!");
+        }
         else
           d2 = smaug.attack( pat );
         }
@@ -179,16 +184,18 @@ public class YoRPG
           if (pat.getDuration() == 0){
             pat.normalize();
             pat.setEffect(null);
+            System.out.println(pat.getName() + " is no longer buff'd.");
           }
           else
             pat.buff();
         }
 
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-                            " points of damage.");
+                            " points of damage, " + smaug.getHP() + " pointes of healthe remain.");
 
         System.out.println( "\n" + "Ye Olde "+ smaug.monsterType +" smacked " + pat.getName() +
-                            " for " + d2 + " points of damage.");
+                            " for " + d2 + " points of damage, " + pat.getHP() + " pointes of healthe remain.");
+        System.out.println(pat.getMP() + " pointes of magick remain.");
 	    }//end while
 
 	    //option 1: you & the monster perish
@@ -210,7 +217,7 @@ public class YoRPG
         return false;
 	    }
     }//end else
-
+    
     return true;
   }//end playTurn()
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
