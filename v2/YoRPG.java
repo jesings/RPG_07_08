@@ -116,7 +116,7 @@ public class YoRPG
 	    if(MErate==0){
 		smaug = new Skeleton();
 	    }
-	    if(MErate==1){
+	    else if(MErate==1){
 		smaug = new Wisp();
 	    }
 	    else{
