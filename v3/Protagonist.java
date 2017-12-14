@@ -1,6 +1,6 @@
 //By Jonathan Singer and Matthew Ming
 public abstract class Protagonist extends Character{
-    private String name;
+    protected String name;
     public Protagonist(String myName){
      name = myName;
      HP = 125;
@@ -24,8 +24,8 @@ public abstract class Protagonist extends Character{
             attack = .4;
     }
     public abstract String toString();
-    //Error message:
-    /*          .\Mage.java:41: error: abstract method toString() in Protagonist cannot be accessed directly
+    //One of the many error messages:
+    /*          .\GreyMage.java:9: error: cannot find symbol
                 return super.toString()
      */
  }

@@ -6,6 +6,6 @@ public class LightMage extends Mage{
         spellBook[2] = "Magic Missile";
     }
     public String toString(){
-        return "A light magician";
+        return super.toString() + ",a light magician";
     }
 }

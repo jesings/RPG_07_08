@@ -22,7 +22,7 @@ public class Mage extends Protagonist{
 		return Math.abs(myMagic.getDamage());
 	}
     public Mage(String name){
-		super(name);
+	super(name);
 		MP = 100;
 		magic = 75;
 		defense -= 10;
@@ -37,7 +37,12 @@ public class Mage extends Protagonist{
 	public int getMP(){
 		return MP;
 	}
-	public String toString(){
-		return super.toString() + ", the Mage";
-	}
+    public String toString(){
+		return  name + ", " + HP + " H.P." + ", the Mage";
+		}
+    //Error message:
+    /*Mage.java:1: error: Mage is not abstract and does not override abstract method toString() in Protagonist
+public class Mage extends Protagonist{
+       ^
+       1 error*/
 }
