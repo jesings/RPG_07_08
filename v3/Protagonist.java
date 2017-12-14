@@ -24,8 +24,8 @@ public abstract class Protagonist extends Character{
             attack = .4;
     }
     public abstract String toString();
-    //One of the many error messages:
-    /*          .\GreyMage.java:9: error: cannot find symbol
+    //Error message:
+    /*          .\Mage.java:41: error: abstract method toString() in Protagonist cannot be accessed directly
                 return super.toString()
      */
  }
