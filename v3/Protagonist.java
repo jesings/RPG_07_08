@@ -24,5 +24,9 @@ public abstract class Protagonist extends Character{
             attack = .4;
     }
     public abstract String toString();
+    //One of the many error messages:
+    /*          .\GreyMage.java:9: error: cannot find symbol
+                return super.toString()
+     */
  }
  
